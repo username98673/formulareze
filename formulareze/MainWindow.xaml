@@ -1,0 +1,39 @@
+﻿<Window x:Class="formulareze.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:formulareze"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <StackPanel>
+        <Slider x:Name="rozmiarTekstuSlider" 
+        Minimum="10"
+        Maximum="45"
+                Value="{Binding ElementName=liczba2TextBox,Path=Text}"
+        />
+        <TextBlock x:Name="napisTekstBlok"
+            FontSize="{Binding
+            Path=Value,ElementName=rozmiarTekstuSlider
+            }">
+            Testujemy wizanie danych</TextBlock>
+        <TextBlock x:Name="liczbaTextBox"
+                   Margin="24"
+                   Text="{Binding Path=Value,ElementName=rozmiarTekstuSlider}"
+                   >
+            
+        </TextBlock>
+        <TextBox 
+            Margin="30"
+            x:Name="liczba2TextBox"
+            Text="30"
+            >
+            
+        </TextBox>
+    </StackPanel>
+</Window>
+<!--
+        Wiązanie danycgh zeby w xml zmienic wartosc atrybutu dla jednego elementy poprzez zmiane innego stosujemy Binding(jak w przykladie powyzej)
+        Element  ==> x:Name elemtnet z ktorego berzemy cos
+        Path ==> nazwa atrybut z tego elementu
+ -->
